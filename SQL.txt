@@ -1,0 +1,40 @@
+create database car_management;
+use car_management;
+
+create table products (
+	id int primary key auto_increment,
+	name varchar(255),
+    type int,
+    release_at datetime,
+    create_at datetime,
+    updated_at datetime,
+    price float,
+    photo_url varchar(255),
+    color varchar(100)
+);
+
+select * from products;
+
+alter table products modify column create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+alter table products modify column updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+alter table products modify column release_at year;
+
+alter table products add column descript nvarchar(255);
+
+INSERT INTO products (name, type, price, release_at, descript, photo_url) VALUES
+('Honda Civic', 2, 250, 2024, 'Xe thể thao mạnh mẽ màu đỏ', 'https://example.com/honda-civic.jpg'),
+('Ford Ranger', 2, 350, 2023, 'Xe bán tải mạnh mẽ, phù hợp địa hình gồ ghề', 'https://example.com/ford-ranger.jpg'),
+('Hyundai Accent', 2, 180, 2024, 'Sedan nhỏ gọn, tiết kiệm nhiên liệu', 'https://example.com/hyundai-accent.jpg'),
+('Mazda CX-5', 2, 400, 2023, 'SUV gầm cao, nội thất hiện đại', 'https://example.com/mazda-cx5.jpg'),
+('VinFast VF8', 2, 500, 2024, 'Xe điện thông minh, công nghệ cao', 'https://example.com/vinfast-vf8.jpg'),
+('Mercedes-Benz C200', 2, 800, 2023, 'Sedan hạng sang, phong cách lịch lãm', 'https://example.com/mercedes-c200.jpg'),
+('BMW X5', 2, 900, 2024, 'SUV thể thao, hiệu suất cao', 'https://example.com/bmw-x5.jpg'),
+('Audi A4', 2, 750, 2023, 'Xe sedan hạng sang, động cơ mạnh mẽ', 'https://example.com/audi-a4.jpg'),
+('Tesla Model 3', 2, 700, 2024, 'Xe điện tự lái, công nghệ tiên tiến', 'https://example.com/tesla-model3.jpg'),
+('Kia Seltos', 2, 320, 2023, 'SUV cỡ nhỏ, thiết kế trẻ trung', 'https://example.com/kia-seltos.jpg'),
+('Toyota Camry', 2, 450, 2024, 'Sedan cao cấp, trải nghiệm lái êm ái', 'https://example.com/toyota-camry.jpg'),
+('Ford Everest', 2, 600, 2023, 'SUV địa hình mạnh mẽ, phù hợp gia đình', 'https://example.com/ford-everest.jpg'),
+('Nissan Navara', 2, 370, 2024, 'Xe bán tải bền bỉ, tiết kiệm nhiên liệu', 'https://example.com/nissan-navara.jpg'),
+('Mitsubishi Xpander', 2, 300, 2023, 'MPV 7 chỗ, phù hợp gia đình', 'https://example.com/mitsubishi-xpander.jpg'),
+
+
